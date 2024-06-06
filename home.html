@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body{
+            font-family:Arial, sans-serif;
+            margin:0;
+            padding:0;
+            background-image: url(bac.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container{
+            max-width:800px;
+            margin:50px auto;
+            padding:20px;
+            background-image: url(back.jpeg);
+            color:whitesmoke;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0, 0, 0, 0.1);
+            font-style: oblique;
+        }
+        h1{
+            text-align:center;
+            margin-bottom:20px;
+        }
+        .user-info{
+            background-color:black;
+            padding:20px;
+            border-radius:5px;
+            box-shadow:0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .user-info h2{
+            margin-bottom:10px;
+        }
+        .user-info p{
+            margin-bottom:5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Dashboard</h1>
+        <div class="user-info">
+            <h2>User Information</h2>
+            <p><strong>Name:</strong> <span id="user-name"></span></p>
+            <p><strong>Email:</strong> <span id="user-email"></span></p>
+        </div>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const userName = urlParams.get('name');
+        const userEmail = urlParams.get('email');
+        document.getElementById('user-name').textContent = userName;
+        document.getElementById('user-email').textContent = userEmail;
+    </script>
+</body>
+</html>
